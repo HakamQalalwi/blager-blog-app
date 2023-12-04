@@ -13,11 +13,11 @@ const Single = () => {
         />
         <div className="user">
           <img
-            src="https://images.pexels.com/photos/19248753/pexels-photo-19248753/free-photo-of-a-woman-with-a-white-tank-top-and-a-green-olive-tree.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src="https://images.pexels.com/photos/3760376/pexels-photo-3760376.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt=""
           />
           <div className="info">
-            <span>Hakam</span>
+            <span>Hakam Qalalwi</span>
             <p>Posted 2 days ago</p>
           </div>
           <div className="edit">
