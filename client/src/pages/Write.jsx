@@ -51,7 +51,6 @@ const Write = () => {
     }
   };
 
-  console.log(value);
   return (
     <div className="add">
       <div className="content">
