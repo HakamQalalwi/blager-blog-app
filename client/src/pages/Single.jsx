@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Edit from "../img/edit.png";
 import Delete from "../img/delete.png";
 import Menu from "../components/Menu";
@@ -11,6 +11,7 @@ const Single = () => {
   const [post, setPost] = useState({});
 
   const location = useLocation();
+  const navigate = useNavigate();
 
   const postId = location.pathname.split("/")[2];
 
@@ -29,15 +30,21 @@ const Single = () => {
     fetchData();
   }, [postId]);
 
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`/posts/${postId}`);
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className="single">
       <div className="content">
         <img src={post?.img} alt="" />
         <div className="user">
-          <img
-            src="https://images.pexels.com/photos/3760376/pexels-photo-3760376.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt=""
-          />
+          {post.userImg && <img src={post.userImg} alt="" />}
           <div className="info">
             <span>{post.username}</span>
             <p>Posted {moment(post.date).fromNow()}</p>
@@ -47,7 +54,7 @@ const Single = () => {
               <Link to={`/write?edit=2`}>
                 <img src={Edit} alt="" />
               </Link>
-              <img src={Delete} alt="" />
+              <img onClick={handleDelete} src={Delete} alt="" />
             </div>
           )}
         </div>
