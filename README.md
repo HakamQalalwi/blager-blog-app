@@ -81,7 +81,7 @@ The **Blogging Platform** is a full-stack application that allows users to regis
     npm start
 7. **Start the client:**
    ```sh
-    npm run dev
+    npm start
 
 ## Usage
 
