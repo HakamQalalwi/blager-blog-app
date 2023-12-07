@@ -96,7 +96,6 @@ The **Blogging Platform** is a full-stack application that allows users to regis
 - client
   - public
   - src
-    - assets
     - components
     - context
     - img
